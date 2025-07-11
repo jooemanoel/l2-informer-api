@@ -15,4 +15,8 @@ public class NpcDTO {
 
   private String name;
 
+  private String type;
+
+  private BigDecimal level;
+
 }

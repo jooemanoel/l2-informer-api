@@ -38,6 +38,12 @@ public class DroplistDAO {
     return query.getResultList();
   }
 
+  public List<DroplistDTO> listarPorItemComNomes(Integer itemId) {
+    TypedQuery<DroplistDTO> query = em.createNamedQuery(Droplist.LISTAR_POR_ITEM_COM_NOMES, DroplistDTO.class);
+    query.setParameter("itemId", itemId);
+    return query.getResultList();
+  }
+
   public Droplist buscar(DroplistId droplistId) {
     return em.find(Droplist.class, droplistId);
   }

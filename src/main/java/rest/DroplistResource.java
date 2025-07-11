@@ -43,8 +43,15 @@ public class DroplistResource {
 
   @GET
   @Path("/npc/{id}")
-  @Operation(summary = "Buscar droplist por Npc", description = "Retorna uma lista")
+  @Operation(summary = "Listar droplist por Npc", description = "Retorna uma lista")
   public List<DroplistDTO> listarPorNpc(Integer id) {
-    return service.listarPorNpc(id);
+    return service.listarPorNpcComNomes(id);
+  }
+
+  @GET
+  @Path("/item/{id}")
+  @Operation(summary = "Listar droplist por Item", description = "Retorna uma lista")
+  public List<DroplistDTO> listarPorItem(Integer id) {
+    return service.listarPorItemComNomes(id);
   }
 }

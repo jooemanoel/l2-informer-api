@@ -23,9 +23,11 @@ import persistence.dto.NpcDTO;
 @SqlResultSetMapping(name = "NpcDTOMapping", classes = @ConstructorResult(targetClass = NpcDTO.class, columns = {
         @ColumnResult(name = "id", type = BigDecimal.class),
         @ColumnResult(name = "name", type = String.class),
+        @ColumnResult(name = "type", type = String.class),
+        @ColumnResult(name = "level", type = BigDecimal.class),
 }))
 @NamedNativeQueries({
-        @NamedNativeQuery(name = Npc.LISTAR_ID_NAME, query = "SELECT id, name FROM interlude.npc", resultSetMapping = "NpcDTOMapping"),
+        @NamedNativeQuery(name = Npc.LISTAR_ID_NAME, query = "SELECT id, name, type, level FROM interlude.npc", resultSetMapping = "NpcDTOMapping"),
         @NamedNativeQuery(name = Npc.LISTAR, query = "SELECT * FROM interlude.npc", resultClass = Npc.class)
 })
 @Data

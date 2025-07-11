@@ -26,8 +26,11 @@ public class DroplistService {
     return dao.buscar(droplistId);
   }
 
-  public List<DroplistDTO> listarPorNpc(Integer mobId) {
+  public List<DroplistDTO> listarPorNpcComNomes(Integer mobId) {
     return dao.listarPorNpcComNomes(mobId);
+  }
+  public List<DroplistDTO> listarPorItemComNomes(Integer itemId) {
+    return dao.listarPorItemComNomes(itemId);
   }
 
   public Integer excluir(DroplistId droplistId) {
